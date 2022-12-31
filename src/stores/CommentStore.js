@@ -14,13 +14,13 @@ export const useCommentStore = defineStore('commentStore', {
         },
         addForm(rs) {
             console.log(rs);
-            axios.post('http://localhost:5000/comments', rs).then((response) => {
+            axios.post('https://comment-server.onrender.com/comments', rs).then((response) => {
                 console.log(response);
                 return this.comments= [response.data,...this.comments]
             });
         },
         getComments() {
-            axios.get('http://localhost:5000/comments?_sort=id&_order=desc').then((rs) => {
+            axios.get('https://comment-server.onrender.com/comments?_sort=id&_order=desc').then((rs) => {
                 this.comments = rs.data;
             })
         }
