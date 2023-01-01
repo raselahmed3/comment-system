@@ -25,6 +25,10 @@ export const useCommentStore = defineStore('commentStore', {
             })
         }
 
+    },
+
+    getters: {
+        allComments: (state) => state.comments,
     }
 
 })

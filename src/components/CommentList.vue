@@ -2,7 +2,7 @@
    <div class="mt-4  w-[512px] mx-auto">
     <h3 class="text-3xl text-gray-500">Commnent List</h3>
     <ul class="space-y-6 mt-4">
-        <li v-for="comment in comments" :key="comment.id" class="bg-white rounded-sm shadow">
+        <li v-for="comment in allComments" :key="comment.id" class="bg-white rounded-sm shadow">
             <div class="px-6 py-5">
                 <div class="sm:flex sm:items-center sm:justify-between">
                     <div class="flex items-center">
@@ -47,7 +47,7 @@ import { mapState } from 'pinia';
 export default {
     name: 'commentList',
     computed: {
-        ...mapState(useCommentStore, ['comments'])
+        ...mapState(useCommentStore, ['allComments'])
     }
 
 }
